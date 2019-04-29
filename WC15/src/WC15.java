@@ -12,6 +12,7 @@ import java.util.List;
 
 public class WC15
 {
+
   /**
    * 
    * Given a string of odd length, return the string length 3 from its middle,
@@ -30,8 +31,10 @@ public class WC15
    */
   public static String centralThree(String letters)
   {
-    //TODO: Finish
-    return "no";
+
+    int middleIndex = letters.length() / 2;
+    String midThree = letters.substring(middleIndex - 1, middleIndex + 2);
+    return midThree;
   }
 
   /**
@@ -51,8 +54,21 @@ public class WC15
    */
   public static String chopFront(String str)
   {
-    //TODO: Finish
-    return "no";
+    String answer = str.substring(2);
+    if (str.substring(0, 1).equals("a") && !str.substring(1, 2).equals("b"))
+    {
+      answer = str.substring(0, 1) + str.substring(2);
+    }
+    else if (str.substring(1, 2).equals("b")
+      && !str.substring(0, 1).equals("a"))
+    {
+      answer = str.substring(1, 2) + str.substring(2);
+    }
+    else if (str.substring(0, 1).equals("a") && str.substring(1, 2).equals("b"))
+    {
+      answer = str;
+    }
+    return answer;
   }
 
   /**
@@ -72,8 +88,20 @@ public class WC15
    */
   public static String hateX(String str)
   {
-    //TODO: Finish
-    return "no";
+    String answer = "";
+    if (str.substring(0, 1).equals("x"))
+    {
+      answer = str.substring(1);
+    }
+    else if (str.substring(1, 2).equals("x"))
+    {
+      answer = str.substring(0, 1) + str.substring(2);
+    }
+    else
+    {
+      answer = str;
+    }
+    return answer;
   }
 
   /**
@@ -88,7 +116,7 @@ public class WC15
    */
   public static void swapRows(int[][] mat, int rowAIndex, int rowBIndex)
   {
-    //TODO: Finish
+    // TODO: Finish
   }
 
   /**
@@ -103,7 +131,7 @@ public class WC15
    */
   public static void swapColumns(int[][] mat, int colAIndex, int colBIndex)
   {
-    //TODO: Finish
+    // TODO: Finish
   }
 
   /**
@@ -122,7 +150,7 @@ public class WC15
    */
   public static String[][] fill2DWithLetters(String str, int rows, int cols)
   {
-    //TODO: Finish
+    // TODO: Finish
     return new String[][] {{"42"}};
   }
 
@@ -155,7 +183,7 @@ public class WC15
    */
   public static int[][] fillDownAndUp(int[] vals, int rows, int cols)
   {
-    //TODO: Finish
+    // TODO: Finish
     return new int[][] {{42}};
   }
 
@@ -189,9 +217,9 @@ public class WC15
    * @return a smaller array containing the specified elements
    */
   public static int[][] crop2D(int[][] mat, int startRow, int startCol,
-      int endRow, int endCol)
+    int endRow, int endCol)
   {
-    //TODO: Finish
+    // TODO: Finish
     return new int[][] {{42}};
   }
 
