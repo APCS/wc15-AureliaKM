@@ -89,13 +89,17 @@ public class WC15
   public static String hateX(String str)
   {
     String answer = "";
-    if (str.substring(0, 1).equals("x"))
+    if (str.substring(1, 2).equals("x") && str.substring(0, 1).equals("x"))
     {
-      answer = str.substring(1);
+      answer = "";
     }
     else if (str.substring(1, 2).equals("x"))
     {
       answer = str.substring(0, 1) + str.substring(2);
+    }
+    else if (str.substring(0, 1).equals("x"))
+    {
+      answer = str.substring(1);
     }
     else
     {
@@ -116,7 +120,9 @@ public class WC15
    */
   public static void swapRows(int[][] mat, int rowAIndex, int rowBIndex)
   {
-    // TODO: Finish
+    int[] tempRow = new int[mat.length];
+    
+    //for(int i )
   }
 
   /**
