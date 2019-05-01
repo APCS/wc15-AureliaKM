@@ -103,8 +103,8 @@ public class WC15Test
     //@formatter:on
     WC15.swapRows(matrix, 0, 1);
     assertEquals("[5, 6, 7, 8]\n" + 
-        "[1, 2, 3, 4]\n" + 
-        "[9, 1, 2, 3]\n" + 
+                 "[1, 2, 3, 4]\n" + 
+                 "[9, 1, 2, 3]\n" + 
         "", beautify(matrix));
   }
   
@@ -148,8 +148,8 @@ public class WC15Test
     //@formatter:on
     WC15.swapColumns(matrix, 2, 1);
     assertEquals("[1, 3, 2, 4]\n" + 
-        "[5, 7, 6, 8]\n" + 
-        "[9, 2, 1, 3]\n" + 
+                 "[5, 7, 6, 8]\n" + 
+                 "[9, 2, 1, 3]\n" + 
         "", beautify(matrix));
   }
   
@@ -188,10 +188,10 @@ public class WC15Test
   {
     String [][] matrix = WC15.fill2DWithLetters("dorados", 5, 3);
     assertEquals("[d, o, r]\n" + 
-        "[a, d, o]\n" + 
-        "[s, null, null]\n" + 
-        "[null, null, null]\n" + 
-        "[null, null, null]\n" + 
+                 "[a, d, o]\n" + 
+                 "[s, null, null]\n" + 
+                 "[null, null, null]\n" + 
+                 "[null, null, null]\n" + 
         "", beautify(matrix));
   }
   
@@ -245,8 +245,8 @@ public class WC15Test
     int cols = vals.length / rows;
     int [][] matrix = WC15.fillDownAndUp(vals, rows, cols);
     assertEquals("[1, 6, 7, 12]\n" + 
-        "[2, 5, 8, 11]\n" + 
-        "[3, 4, 9, 10]\n" + 
+                 "[2, 5, 8, 11]\n" + 
+                 "[3, 4, 9, 10]\n" + 
         "", beautify(matrix));
   }
   
@@ -326,7 +326,7 @@ public class WC15Test
     //@formatter:on
     int [][] croppedMatrix = WC15.crop2D(matrix, 1, 2, 2, 3);
     assertEquals("[4, 3]\n" + 
-        "[-1, 0]\n" + 
+                "[-1, 0]\n" + 
         "", beautify(croppedMatrix));
   }
   
@@ -356,8 +356,8 @@ public class WC15Test
     //@formatter:on
     int [][] croppedMatrix = WC15.crop2D(matrix, 0, 0, 2, 1);
     assertEquals("[10, 9]\n" + 
-        "[6, 5]\n" + 
-        "[2, 1]\n" + 
+                  "[6, 5]\n" + 
+                  "[2, 1]\n" + 
         "", beautify(croppedMatrix));
   }
   

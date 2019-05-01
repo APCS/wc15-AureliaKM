@@ -120,9 +120,10 @@ public class WC15
    */
   public static void swapRows(int[][] mat, int rowAIndex, int rowBIndex)
   {
-    int[] tempRow = new int[mat.length];
-    
-    //for(int i )
+
+    int[] tempRow = mat[rowAIndex];
+    mat[rowAIndex] = mat[rowBIndex];
+    mat[rowBIndex] = tempRow;
   }
 
   /**
@@ -137,7 +138,14 @@ public class WC15
    */
   public static void swapColumns(int[][] mat, int colAIndex, int colBIndex)
   {
-    // TODO: Finish
+    int[] tempArr = new int[mat.length];
+
+    for (int r = 0; r < tempArr.length; r++)
+    {
+      tempArr[r] = mat[r][colAIndex];
+      mat[r][colAIndex] = mat[r][colBIndex];
+      mat[r][colBIndex] = tempArr[r];
+    }
   }
 
   /**
@@ -156,8 +164,27 @@ public class WC15
    */
   public static String[][] fill2DWithLetters(String str, int rows, int cols)
   {
-    // TODO: Finish
-    return new String[][] {{"42"}};
+    String[][] answerArr = new String[rows][cols];
+    int letterCount = 0;
+
+    for (int r = 0; r < answerArr.length; r++)
+    {
+      for (int c = 0; c < answerArr[0].length; c++)
+      {
+        if (letterCount == str.length())
+        {
+          answerArr[r][c] = null;
+        }
+        else
+        {
+          String letter = str.substring(letterCount, letterCount + 1);
+          answerArr[r][c] = letter;
+          letterCount++;
+        }
+      }
+    }
+
+    return answerArr;
   }
 
   /**
@@ -189,8 +216,33 @@ public class WC15
    */
   public static int[][] fillDownAndUp(int[] vals, int rows, int cols)
   {
-    // TODO: Finish
-    return new int[][] {{42}};
+    int[][] arr = new int[rows][cols];
+    int count = 0;
+
+    for (int c = 0; c < arr[0].length; c++)
+    {
+      // ok now fill from top to bottom like normal...
+      for (int r = 0; r < arr.length; r++)
+      {
+
+        arr[r][c] = vals[count];
+        count++;
+      }
+
+      c++;
+
+      if (c < arr[0].length)
+      {
+        // now start at the bottom and go up.
+        for (int r = arr.length - 1; r >= 0; r--)
+        {
+          arr[r][c] = vals[count];
+          count++;
+        }
+      }
+    }
+
+    return arr;
   }
 
   /**
@@ -225,8 +277,15 @@ public class WC15
   public static int[][] crop2D(int[][] mat, int startRow, int startCol,
     int endRow, int endCol)
   {
-    // TODO: Finish
-    return new int[][] {{42}};
+    int[][] arr = new int[endRow - startRow + 1][endCol - startCol + 1];
+    for (int r = startRow; r < endRow; r++)
+    {
+      for (int c = startCol; c < endCol; c++)
+      {
+        arr[r][c] = mat[r][c];
+      }
+    }
+    return arr;
   }
 
 }
